@@ -1,0 +1,9 @@
+[user]
+	name = Robert Hunt
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
+[init]
+	defaultBranch = main
+
