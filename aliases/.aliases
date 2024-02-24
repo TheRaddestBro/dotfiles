@@ -1,5 +1,6 @@
 # Determine what (Bourne compatible) shell we are running under. Put the result
 # in $PROFILE_SHELL (not $SHELL) so further code can depend on the shell type.
+# -------------------------------------------------------------
 if test -n "$ZSH_VERSION"; then
   PROFILE_SHELL=zsh
 elif test -n "$BASH_VERSION"; then
@@ -14,7 +15,9 @@ else
   PROFILE_SHELL=sh
 fi
 
+
 # zsh doesn't support the -t flag of type, so it gets special support
+# -------------------------------------------------------------
 if [ "$PROFILE_SHELL" = "zsh" ]; then
 	if [ "type gp >/dev/null" ]; then
 		unalias gp
@@ -38,12 +41,16 @@ else
 	alias ll="ls -lh"
 fi
 
+
 # Aliases
+# -------------------------------------------------------------
 alias gd="git difftool --dir-diff --no-symlinks"
 alias gf="git fetch"
 alias gsu="git submodule update --init --recursive"
 
+
 # Functions
+# -------------------------------------------------------------
 gs() {
 	git status
 }
@@ -97,12 +104,55 @@ ggc() {
 	git gc
 }
 
+
+# Cmake Configure and build
+# -------------------------------------------------------------
+cconf() {
+  cmake --preset=$1
+}
+
+cclean() {
+  cmake --build build/ --target clean
+}
+
+cbuild() {
+  cmake --build build/ --config=$1 --parallel 20
+}
+
+cbuildall() {
+  cbuild Release && cbuild Debug
+}
+
+crebuild() {
+  cconf $1 && cclean && cbuild $2
+}
+
+
+# Shortcut. Feel free to change this per environment
+crb() {
+  crebuild linux-only-debug Debug
+}
+
+ctests() {
+  ctest --preset=default
+}
+
+alias ct=ctests
+alias doit="crb && ct"
+
+# Nala
+# -------------------------------------------------------------
 alias nlu="sudo nala update && sudo nala list --upgradable"
 alias nup="sudo nala upgrade -y"
 
+
+# Tmux
+# -------------------------------------------------------------
 alias mux="tmuxinator"
 
+
 # Include work-specific aliases
+# -------------------------------------------------------------
 if [ -f ~/.aliases_work ]; then
 	. ~/.aliases_work
 fi
