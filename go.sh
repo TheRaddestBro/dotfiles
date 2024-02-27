@@ -7,7 +7,7 @@ if [ ! -f /usr/bin/nala ]; then
 fi
 
 echo "Installing basic packages..."
-sudo snap install btop && sudo snap refresh && sudo nala update && sudo nala install -y --no-install-recommends curl wget aptitude neofetch stress s-tui git cmake stow tmux zsh tree zip tldr powerline tmuxinator sysstat
+sudo snap install btop tldr && sudo snap refresh && sudo nala update && sudo nala install -y --no-install-recommends curl wget aptitude neofetch stress s-tui git cmake stow tmux zsh tree zip powerline tmuxinator sysstat
 mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."
@@ -21,13 +21,13 @@ sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"powerlevel10k\/powerlevel10k\"/
 sed -i 's/plugins=\(.*\)/plugins=(battery git tmux tmuxinator)/g' $HOME/.zshrc
 
 echo "Making zsh the default shell (You might need to provide credentials for this)..."
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh) $(whoami)
 
 echo "Setting up the rest of the dotfiles..."
 ./setupStows.sh
 
 echo "Updating tldr results. For some reason this is not done on install..."
-tldr -u
+#tldr -u
 
 echo "Done! Now, you can run logout/login and configure the powerlevel10k theme. Happy typing!"
 
