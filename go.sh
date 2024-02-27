@@ -26,8 +26,7 @@ sudo chsh -s $(which zsh) $(whoami)
 echo "Setting up the rest of the dotfiles..."
 ./setupStows.sh
 
-echo "Updating tldr results. For some reason this is not done on install..."
+echo "Updating tldr results..."
 tldr -u
 
 echo "Done! Now, you can run logout/login and configure the powerlevel10k theme. Happy typing!"
-
