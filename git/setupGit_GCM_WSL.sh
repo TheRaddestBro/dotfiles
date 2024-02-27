@@ -16,7 +16,12 @@ echo "Installing git-credential-manager (dotnet tool version)"
 dotnet tool install --global git-credential-manager
 git-credential-manager configure
 
+# Somewhat secure default option.
+# TODO: Figure out how to get gpg or libsecret working.
 git config --global credential.credentialStore cache && git config --global credential.cacheOptions "--timeout 3600"
-git config --global credential.github.com.useHttpPath true
+
+# Commenting this out for now. This seems to cause the GCM to prompt EVERY time it needs credentials.
+# Essentially invalidaging the "cache" behavior we set above.
+#git config --global credential.github.com.useHttpPath true
 
 echo "Done!"
