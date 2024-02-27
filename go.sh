@@ -27,7 +27,7 @@ echo "Setting up the rest of the dotfiles..."
 ./setupStows.sh
 
 echo "Updating tldr results. For some reason this is not done on install..."
-#tldr -u
+tldr -u
 
 echo "Done! Now, you can run logout/login and configure the powerlevel10k theme. Happy typing!"
 
