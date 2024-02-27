@@ -19,6 +19,7 @@ dotnet tool install --global git-credential-manager
 git-credential-manager configure
 
 git config --global credential.credentialStore cache && git config --global credential.cacheOptions "--timeout 3600"
+git config --global credential.github.com.useHttpPath true
 
 echo "Done!"
 
