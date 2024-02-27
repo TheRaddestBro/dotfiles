@@ -1,8 +1,12 @@
 # TheRaddestBro's .dotfiles
 
 ## Installation
+Currently, this is tuned for a WSL Ubuntu setup.
 
-* Run ``go.sh``to start. Currently, this is tuned for a WSL Ubuntu setup.
+* Install via one of these (This will clone the repo for you).
+  + ``bash -c "$(curl -fsSL https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"``
+  + ``bash -c "$(wget -qO- https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"``
+  + ``bash -c "$(fetch -o - https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"``
 * Logout/Login. This will allow aliases to work, and let the powerlevel10k config script to run.
 * Once that is done, other scripts can be run to customize/setup other things
   + Git
@@ -11,7 +15,7 @@
 * ``removeStows.sh`` can be used to basically uninstall these dotfiles.
 
 ## List of installed Tools/Utilities/Packages in this setup.
-- TODO
+- TODO: 
 
 ## Notices
 All content and source code for this package are written by, and exclusively belong to TheRaddestBro.
