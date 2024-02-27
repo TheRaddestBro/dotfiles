@@ -151,6 +151,11 @@ alias nup="sudo nala upgrade -y"
 alias mux="tmuxinator"
 
 
+# Lazygit
+# -------------------------------------------------------------
+alias lg=lazygit
+
+
 # Include work-specific aliases
 # -------------------------------------------------------------
 if [ -f ~/.aliases_work ]; then
