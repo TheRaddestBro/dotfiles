@@ -11,7 +11,8 @@ echo "Adding Beyond Compare as the git difftool..."
 # So I don't have to keep typing it...
 gcf="git config --global --replace-all"
 
-# WSL-ify the Beyond Compare 4 path. TODO: Update for BC5 when that arrives
+# WSL-ify the Beyond Compare 4 path.
+# TODO: Update for BC5 when that arrives
 bcPath=$(wslpath -au "c:\Program Files\Beyond Compare 4\bcomp.exe")
 
 # Fix spaces!
@@ -50,4 +51,3 @@ $gcf mergetool.bc.path "$bcPathFixed"
 $gcf mergetool.bc.cmd "$bcMergeCmd"
 
 echo "Done!"
-
