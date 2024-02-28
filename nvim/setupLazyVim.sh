@@ -8,8 +8,7 @@ if [ ! -f /usr/bin/nala ]; then
 fi
 
 echo "Installing dependencies"
-sudo nala install -y ripgrep build-essential fd-find zip unzip
-sudo snap install lazygit
+sudo nala install -y build-essential
 
 echo "Installing neovim"
 sudo snap install nvim --classic
@@ -29,4 +28,3 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
 echo "Done!"
-

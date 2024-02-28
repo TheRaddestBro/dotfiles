@@ -3,7 +3,7 @@
 echo "Ensuring dependencies are available..."
 if [ ! -f /usr/bin/nala ]; then
 	echo "Installing nala. It's superior to apt in every way. Use it instead! :)"
-	sudo apt update && sudo apt install -y --no-install-recommends --show-progress nala
+	sudo apt update && sudo apt install -y --show-progress nala
 fi
 
 echo "Setting up Homebrew..."
@@ -13,10 +13,13 @@ popd
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo "Installing Homebrew packages..."
-brew install btop curl dust fzf lazygit stress tldr 
+brew install btop curl dust fd fzf lazygit ripgrep stress tldr
+
+echo "Refreshing snaps..."
+sudo snap refresh
 
 echo "Installing APT packages..."
-sudo snap refresh && sudo nala update && sudo nala install -y --no-install-recommends wget aptitude neofetch s-tui git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat
+sudo nala update && sudo nala install -y --no-install-recommends wget aptitude neofetch s-tui git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat
 mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."
