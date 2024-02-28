@@ -12,6 +12,12 @@ Currently, this is tuned for a WSL Ubuntu setup.
   + Git
     * ``setupGit_GCM_WSL.sh`` Run this to setup the dotnet version of Git Credential Manager.
     * ``setupGit_BC_WSL.sh`` This will set up Beyond Compare as your git difftool.
+  + Neovim
+    * Choose one:
+      + ``setupLazyVim.sh`` Run this to setup LazyVim.
+      + ``setupNeovimStarter.sh`` Run this to setup basic Neovim, with only the official kickstart.nvim added.
+      + ``setupNvChad.sh`` Run this to setup NvChad if you're a chad.
+    * Then: ``setupNvimAlternatives.sh`` Run this to alias `vi` and `vim` to `nvim`
 * ``removeStows.sh`` can be used to basically uninstall these dotfiles.
 
 ## List of installed Tools/Utilities/Packages in this setup.
