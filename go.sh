@@ -13,7 +13,7 @@ popd
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo "Installing Homebrew packages..."
-brew install btop curl dust lazygit stress tldr 
+brew install btop curl dust fzf lazygit stress tldr 
 
 echo "Installing APT packages..."
 sudo snap refresh && sudo nala update && sudo nala install -y --no-install-recommends wget aptitude neofetch s-tui git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat
