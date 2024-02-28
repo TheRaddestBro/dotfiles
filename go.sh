@@ -7,7 +7,7 @@ if [ ! -f /usr/bin/nala ]; then
 fi
 
 echo "Installing basic packages..."
-sudo snap install btop tldr && sudo snap refresh && sudo nala update && sudo nala install -y --no-install-recommends curl wget aptitude neofetch stress s-tui git cmake stow tmux zsh tree zip powerline tmuxinator sysstat
+sudo snap install btop tldr dust && sudo snap refresh && sudo nala update && sudo nala install -y --no-install-recommends curl wget aptitude neofetch stress s-tui git cmake stow tmux zsh tree zip powerline tmuxinator sysstat
 mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."
