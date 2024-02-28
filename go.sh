@@ -6,8 +6,17 @@ if [ ! -f /usr/bin/nala ]; then
 	sudo apt update && sudo apt install -y --no-install-recommends --show-progress nala
 fi
 
-echo "Installing basic packages..."
-sudo snap install btop tldr dust && sudo snap refresh && sudo nala update && sudo nala install -y --no-install-recommends curl wget aptitude neofetch stress s-tui git cmake stow tmux zsh tree zip powerline tmuxinator sysstat
+echo "Setting up Homebrew..."
+pushd brew
+./setupBrew.sh
+popd
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+echo "Installing Homebrew packages..."
+brew install btop curl dust lazygit stress tldr 
+
+echo "Installing APT packages..."
+sudo snap refresh && sudo nala update && sudo nala install -y --no-install-recommends wget aptitude neofetch s-tui git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat
 mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."
