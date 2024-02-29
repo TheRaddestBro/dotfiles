@@ -1,5 +1,6 @@
 # Add path so snaps still work
-if [ -d /snap ]; then
+snapPath="/snap"
+if [ -d "$snapPath" ]; then
 	export PATH="$PATH:/snap/bin"
 fi
 
