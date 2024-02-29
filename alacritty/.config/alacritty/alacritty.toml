@@ -1,0 +1,46 @@
+[font]
+normal = { family = "CaskaydiaCove Nerd Font", style = "Regular"}
+size = 12.0
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+[window]
+dimensions = { columns = 200, lines = 56 }
+decorations = "Full"
+opacity = 0.8
+blur = true
+option_as_alt = "OnlyLeft"
+
+[colors]
+selection = { text = "CellForeground", background = "#242272" }
+cursor = { text = "CellForeground", cursor = "#00A000" }
+
+[colors.primary]
+background = "#01001D"
+foreground = "#FFFFFF"
+
+[colors.normal]
+black = "#0C0C0C"
+blue = "#3E31F5"
+cyan = "#13D4D4"
+green = "#21C221"
+magenta = "#D918B9"
+red = "#CC2929"
+white = "#B2B2B2"
+yellow = "#D6C315"
+
+[colors.bright]
+black = "#686868"
+blue = "#737CFF"
+cyan = "#7FFFFF"
+green = "#6BFF6B"
+magenta = "#FF70FF"
+red = "#FF6E6E"
+white = "#FFFFFF"
+yellow = "#FFFF6B"
