@@ -30,6 +30,7 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && $(NVCHAD_
 
 # Remove the git folder, so it can be added to my own custom repo maybe
 rm -rf ~/.config/nvim/.git
+rm -rf ~/.config/nvim/.github
 
 # TODO: Fill this out the next time I actually try out NvChad
 #ignorePattern="^setup.*\.sh|.*_OLD$|.*_NEW$|.*_BASE$"

@@ -29,6 +29,7 @@ mkdir -p $HOME/.config/nvim/lua/plugins
 
 # Remove the git folder, so it can be added to my own custom repo maybe
 rm -rf ~/.config/nvim/.git
+rm -rf ~/.config/nvim/.github
 
 ignorePattern="^setup.*\.sh|.*_OLD$|.*_NEW$|.*_BASE$"
 echo "Installing symlinks for .dotfiles into the $HOME folder..."
