@@ -8,7 +8,7 @@ if [ ! -f /usr/bin/nala ]; then
 fi
 
 echo "Installing dependencies"
-sudo nala install -y ripgrep build-essential fd-find zip unzip
+sudo nala install -y build-essential
 sudo snap install lazygit
 
 echo "Installing neovim"
