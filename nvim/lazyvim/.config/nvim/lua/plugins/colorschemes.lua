@@ -1,6 +1,6 @@
 return {
   -- Add colorschemes
-  { "rktjmp/lush.nvim" },
+  { "rktjmp/lush.nvim", Lazy = false },
   { "ellisonleao/gruvbox.nvim" },
   { "cryptomilk/nightcity.nvim", version = false },
   { "metalelf0/jellybeans-nvim" },
