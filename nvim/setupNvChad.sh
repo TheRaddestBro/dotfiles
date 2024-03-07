@@ -12,7 +12,7 @@ sudo nala install -y build-essential
 sudo snap install lazygit
 
 echo "Installing neovim"
-sudo snap install nvim --classic
+brew install nvim
 
 echo "Backing up old nvim setup"
 mv ~/.config/nvim{,.bak}

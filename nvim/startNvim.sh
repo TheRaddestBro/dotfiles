@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-/usr/bin/snap run nvim ${@}
+nvim ${@}
