@@ -8,7 +8,11 @@ if [ ! -f /usr/bin/nala ]; then
 fi
 
 echo "Installing dotnet..."
-sudo nala install -y --no-install-recommends dotnet7 libice6 libsm6 libfontconfig-dev
+sudo nala install -y --no-install-recommends libice6 libsm6
+#sudo nala install -y --no-install-recommends libfontconfig-dev
+wget https://dot.net/v1/dotnet-install.sh
+chmod +x dotnet-install.sh
+./dotnet-install.sh --channel 7.0
 
 source $HOME/.bash_profile
 
