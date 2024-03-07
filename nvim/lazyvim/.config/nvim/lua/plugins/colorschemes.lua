@@ -8,7 +8,7 @@ return {
   --{ "casonadams/walh" },
   --{ "ntk148v/habamax.nvim" },
   --{ "uloco/bluloco.nvim" },
-  { "tokyonight/nvim" },
+  --{ "tokyonight/nvim" },
   --{ "catppucin/nvim" },
 
   -- Configure default
