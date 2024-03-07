@@ -8,6 +8,10 @@
 #   bash -c "$(fetch -o - https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"
 #
 
+if [ ! -f /usr/bin/git ]; then
+	sudo apt update && sudo apt install -y git
+fi
+
 echo "Cloning dotfiles into $HOME/.dotfiles"
 git clone https://github.com/TheRaddestBro/dotfiles.git $HOME/.dotfiles
 pushd $HOME/.dotfiles
