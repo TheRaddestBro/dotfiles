@@ -15,11 +15,13 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 echo "Installing Homebrew packages..."
 brew install btop curl dust fd fzf lazygit ripgrep stress tldr
 
-echo "Refreshing snaps..."
-sudo snap refresh
+if [ -f /usr/bin/snap ]; then
+	echo "Refreshing snaps..."
+	sudo snap refresh
+fi
 
 echo "Installing APT packages..."
-sudo nala update && sudo nala install -y --no-install-recommends wget aptitude neofetch s-tui git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat
+sudo nala update && sudo nala install -y --no-install-recommends wget aptitude neofetch git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat
 mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."
