@@ -129,12 +129,16 @@ crebuild() {
 
 
 # Shortcut. Feel free to change this per environment
+cb() {
+  cbuild linux-only-debug Debug
+}
+
 crb() {
   crebuild linux-only-debug Debug
 }
 
 ctests() {
-  ctest --preset=default
+  ctest --preset=default --progress -j3
 }
 
 alias ct=ctests
