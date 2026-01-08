@@ -3,12 +3,12 @@ echo "Installing NVChad"
 
 echo "Installing necessary environment packages..."
 if [ ! -f /usr/bin/nala ]; then
-	echo "Installing nala. It's better than apt... Use it instead :)"
-	sudo apt update && sudo apt install -y nala
+  echo "Installing nala. It's better than apt... Use it instead :)"
+  sudo apt update && sudo apt install -y nala
 fi
 
 echo "Installing dependencies"
-sudo nala install -y build-essential
+sudo nala install -y build-essential nodejs
 sudo snap install lazygit
 
 echo "Installing neovim"
