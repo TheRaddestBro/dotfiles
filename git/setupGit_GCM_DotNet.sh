@@ -1,10 +1,10 @@
 #!/bin/bash
-echo "Installing GCM for WSL"
+echo "Installing the DotNet version of the Git Credential Manager"
 
 echo "Installing necessary environment packages..."
 if [ ! -f /usr/bin/nala ]; then
-	echo "Installing nala. It's better than apt... Use it instead :)"
-	sudo apt update && sudo apt install -y nala
+  echo "Installing nala. It's better than apt... Use it instead :)"
+  sudo apt update && sudo apt install -y nala
 fi
 
 echo "Installing dotnet..."
