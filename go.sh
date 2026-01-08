@@ -3,7 +3,7 @@
 echo "Ensuring dependencies are available..."
 if [ ! -f /usr/bin/nala ]; then
   echo "Installing nala. It's superior to apt in every way. Use it instead! :)"
-  sudo apt update && sudo apt install -y --show-progress nala
+  sudo apt update && sudo apt install -y --show-progress nala curl
 fi
 
 echo "Setting up Homebrew..."
@@ -13,7 +13,7 @@ popd
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo "Installing Homebrew packages..."
-brew install btop curl dust fd fzf lazygit ripgrep stress tldr
+brew install btop dust fd fzf lazygit ripgrep stress tldr
 
 if [ -f /usr/bin/snap ]; then
   echo "Refreshing snaps..."
