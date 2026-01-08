@@ -6,4 +6,7 @@
 	autostash = true
 [init]
 	defaultBranch = main
-
+[credential "https://dev.azure.com"]
+  useHttpPath = true
+[credential "https://github.com"]
+  useHttpPath = true
