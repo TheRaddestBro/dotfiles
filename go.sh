@@ -21,7 +21,9 @@ if [ -f /usr/bin/snap ]; then
 fi
 
 echo "Installing APT packages..."
-sudo nala update && sudo nala install -y --no-install-recommends wget aptitude neofetch git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat entr
+pushd helpers
+./_installIfExists.sh wget aptitude neofetch git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat entr
+popd
 mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."

@@ -6,7 +6,7 @@ mkdir -p $HOME/.config/
 
 # Git needs some special attention, as the ~/.gitconfig might already exist, and we don't want to overwrite it.
 pushd git
-./setupGit_Basic.sh
+./setupBasic.sh
 popd
 
 ./_justTheStows.sh
