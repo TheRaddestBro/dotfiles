@@ -164,6 +164,10 @@ alias mux="tmuxinator"
 # -------------------------------------------------------------
 alias lg=lazygit
 
+# Zip utils
+# -------------------------------------------------------------
+alias zipfolders='find . -maxdepth 1 -type d ! -path . -exec zip -9 -r "{}.zip" "{}" \;'
+
 
 # Include work-specific aliases
 # -------------------------------------------------------------
