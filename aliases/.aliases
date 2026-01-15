@@ -167,7 +167,7 @@ alias lg=lazygit
 # Zip utils
 # -------------------------------------------------------------
 alias zipfolders='find . -maxdepth 1 -type d ! -path . -exec zip -9 -r "{}.zip" "{}" \;'
-
+alias zipandremovefolders='find . -maxdepth 1 -type d ! -path . -exec zip -9 -r "{}.zip" "{}" \; -and -exec rm -rf "{}" \;'
 
 # Include work-specific aliases
 # -------------------------------------------------------------
