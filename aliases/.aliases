@@ -47,7 +47,11 @@ fi
 alias R4="cd ~/repos/R4"
 alias work=R4
 
-# Aliases
+# Directories
+# -------------------------------------------------------------
+alias ls="eza --group --icons=always --group-directories-first --git"
+
+# Git
 # -------------------------------------------------------------
 alias gd="git difftool --dir-diff --no-symlinks"
 alias gf="git fetch"
