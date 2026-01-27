@@ -13,7 +13,7 @@ popd
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo "Installing Homebrew packages..."
-brew install btop dust fd fzf lazygit ripgrep stress tldr dust eza
+brew install btop dust fd fzf lazygit ripgrep stress tldr eza
 
 if [ -f /usr/bin/snap ]; then
   echo "Refreshing snaps..."
