@@ -3,6 +3,8 @@
 output="unknown"
 if [ -f "/etc/arch-release" ]; then
   output="arch"
+elif [[ -f "/etc/os-release" ]]; then
+  output="ubuntu"
 elif [[ -f "/etc/debian_version" ]]; then
   output="debian"
 fi
