@@ -1,23 +1,17 @@
 #!/bin/bash
 
-echo "Ensuring dependencies are available..."
-pacman -S tldr which
+echo "Installing critical packages"
+pacman -S --noconfirm eza tldr which
 
+#echo "Setting up Homebrew..."
+#pushd brew
+#./setupBrew.sh
+#popd
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+echo "Installing Pacman packages..."
+pacman -S --noconfirm btop dust fd fzf lazygit ripgrep stress
 exit 0
-echo "Setting up Homebrew..."
-pushd brew
-./setupBrew.sh
-popd
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-echo "Installing Homebrew packages..."
-brew install btop dust fd fzf lazygit ripgrep stress tldr dust eza
-
-if [ -f /usr/bin/snap ]; then
-  echo "Refreshing snaps..."
-  sudo snap refresh
-fi
-
 echo "Installing APT packages..."
 pushd helpers
 ./_installIfExists.sh wget aptitude neofetch git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat entr powertop
