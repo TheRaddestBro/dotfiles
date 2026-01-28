@@ -9,14 +9,17 @@ pacman -S --noconfirm eza tldr which
 #popd
 #eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-echo "Installing Pacman packages..."
+echo "Installing base packages..."
 pacman -S --noconfirm btop dust fd fzf lazygit ripgrep stress
-exit 0
-echo "Installing APT packages..."
-pushd helpers
-./_installIfExists.sh wget aptitude neofetch git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat entr powertop
-popd
+
+echo "Installing fun packages..."
+#pushd helpers
+# Pacman does hot have these. AUR Maybe?
+#./_installIfExists.sh aptitude neofetch tmuxinator
+pacman -S --noconfirm wget git cmake stow tmux zsh tree zip unzip powerline sysstat entr powertop
+#popd
 mkdir -p $HOME/.local/share
+exit 0
 
 echo "Upgrading all other packages..."
 sudo nala upgrade -y
