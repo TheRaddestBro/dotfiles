@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Ensuring dependencies are available..."
-pacman -S curl tldr which
+pacman -S tldr which
 
 exit 0
 echo "Setting up Homebrew..."
