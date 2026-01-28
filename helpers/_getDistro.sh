@@ -1,9 +1,7 @@
 #!/bin/bash
 
 output="unknown"
-if [ -f "/etc/arch-release" ]; then
-  output="arch"
-elif [[ -f "/etc/os-release" ]]; then
+if [[ -f "/etc/os-release" ]]; then
   # Source the file to load the variables
   . /etc/os-release
   if [[ "$ID" == "fedora" ]]; then
@@ -11,10 +9,14 @@ elif [[ -f "/etc/os-release" ]]; then
   elif [[ "$ID" == "ubuntu" ]]; then
     output="ubuntu"
   elif [[ "$ID" == "debian" ]]; then
-    output="debian2"
+    output="debian"
+  elif [[ "$ID" == "arch" ]]; then
+    output="arch"
   fi
 elif [[ -f "/etc/debian_version" ]]; then
   output="debian"
+elif [ -f "/etc/arch-release" ]; then
+  output="arch"
 fi
 
 echo $output
