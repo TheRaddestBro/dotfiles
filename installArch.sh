@@ -8,8 +8,8 @@
 #   bash -c "$(fetch -o - https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/installArch.sh)"
 #
 
-pacman -Syu
-pacman -S git
+pacman -Syu --noconfirm
+pacman -S --noconfirm git
 
 echo "Cloning dotfiles into $HOME/.dotfiles"
 git clone https://github.com/TheRaddestBro/dotfiles.git $HOME/.dotfiles
