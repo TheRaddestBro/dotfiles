@@ -11,9 +11,9 @@
 distroName=$(curl -sS https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/helpers/_getDistro.sh | bash)
 
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
-  sudo apt install -y git
+  sudo apt update && sudo apt install -y git
 elif [[ "$distroName" == "arch" ]]; then
-  pacman -S --noconfirm git
+  pacman -Syu --noconfirm && pacman -S --noconfirm git
 fi
 
 echo "Cloning dotfiles into $HOME/.dotfiles"
