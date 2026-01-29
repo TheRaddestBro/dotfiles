@@ -8,14 +8,17 @@
 #   bash -c "$(fetch -o - https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"
 #
 
-./helpers/_installIfExists.sh git
+distroName=$(curl -sS https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/helpers/_getDistro.sh | bash)
+
+if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
+  sudo apt install -y git
+elif [[ "$distroName" == "arch" ]]; then
+  pacman -S --noconfirm git
+fi
 
 echo "Cloning dotfiles into $HOME/.dotfiles"
 git clone https://github.com/TheRaddestBro/dotfiles.git $HOME/.dotfiles
 pushd $HOME/.dotfiles
-
-helpersPath=$(dirname "$0")
-distroName=$(./${helpersPath}/_getDistro.sh)
 
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   ./go.sh
