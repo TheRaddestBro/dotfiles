@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Seting up Git..."
+echo "Setting up Git..."
 if [ -L $HOME/.gitconfig ]; then
   echo "There was already a .gitconfig symlink in $HOME. I'm going to leave it alone..."
 else
@@ -19,4 +19,3 @@ else
 fi
 
 echo "Want Beyond Compare integration? Run git/setupBC*.sh"
-
