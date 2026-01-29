@@ -3,12 +3,6 @@
 echo "Installing critical packages"
 ./helpers/_installIfExists.sh eza tldr which
 
-#echo "Setting up Homebrew..."
-#pushd brew
-#./setupBrew.sh
-#popd
-#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 echo "Installing base packages..."
 ./helpers/_installIfExists.sh btop dust fd fzf lazygit ripgrep stress vim
 
@@ -20,7 +14,7 @@ mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."
 pacman -Syu --noconfirm
-exit 0
+
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -29,6 +23,7 @@ sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"powerlevel10k\/powerlevel10k\"/
 sed -i 's/plugins=\(.*\)/plugins=(battery git tmux tmuxinator)/g' $HOME/.zshrc
 
 echo "Making zsh the default shell (You might need to provide credentials for this)..."
+# TODO Arch starts everything as root, so this needs to handle zsh living in /usr/sbin for that.
 sudo chsh -s $(which zsh) $(whoami)
 
 echo "Setting up the rest of the dotfiles..."
