@@ -1,17 +1,17 @@
 #!/bin/bash
 echo "Installing Lazyvim"
 
-helpersPath=$(dirname "../helpers")
-distroName=$(./${helpersPath}/_getDistro.sh)
-exit 0
+helpersPath="../helpers"
+distroName=$(${helpersPath}/_getDistro.sh)
+
 echo "Installing dependencies"
-./${helpersPath}/_installIfExists.sh nodejs
+${helpersPath}/_installIfExists.sh nodejs build-essential
 
 echo "Installing neovim"
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   brew install nvim
 elif [[ "$distroName" == "arch" ]]; then
-  ./${helpersPath}/_installIfExists.sh neovim
+  ${helpersPath}/_installIfExists.sh base-devel neovim
 fi
 
 echo "Backing up old nvim setup"
