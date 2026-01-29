@@ -10,7 +10,7 @@ echo "Installing critical packages"
 #eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo "Installing base packages..."
-./helpers/_installIfExists.sh btop dust fd fzf lazygit ripgrep stress
+./helpers/_installIfExists.sh btop dust fd fzf lazygit ripgrep stress vim
 
 echo "Installing fun packages..."
 # Pacman does hot have these. AUR Maybe?
