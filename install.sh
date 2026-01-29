@@ -14,6 +14,9 @@ echo "Cloning dotfiles into $HOME/.dotfiles"
 git clone https://github.com/TheRaddestBro/dotfiles.git $HOME/.dotfiles
 pushd $HOME/.dotfiles
 
+helpersPath=$(dirname "$0")
+distroName=$(./${helpersPath}/_getDistro.sh)
+
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   ./go.sh
 elif [[ "$distroName" == "arch" ]]; then
