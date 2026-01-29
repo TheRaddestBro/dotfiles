@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing critical packages"
-pacman -S --noconfirm eza tldr which
+./helpers/_installIfExists.sh eza tldr which
 
 #echo "Setting up Homebrew..."
 #pushd brew
@@ -10,14 +10,12 @@ pacman -S --noconfirm eza tldr which
 #eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo "Installing base packages..."
-pacman -S --noconfirm btop dust fd fzf lazygit ripgrep stress
+./helpers/_installIfExists.sh btop dust fd fzf lazygit ripgrep stress
 
 echo "Installing fun packages..."
-#pushd helpers
 # Pacman does hot have these. AUR Maybe?
 #./_installIfExists.sh aptitude neofetch tmuxinator
-pacman -S --noconfirm wget git cmake stow tmux zsh tree zip unzip powerline sysstat entr powertop
-#popd
+./helpers/_installIfExists.sh wget git cmake stow tmux zsh tree zip unzip powerline sysstat entr powertop
 mkdir -p $HOME/.local/share
 exit 0
 
