@@ -1,17 +1,17 @@
 #!/bin/bash
 echo "Installing Neovim plus Kickstart"
 
-helpersPath=$(dirname "$0")
-distroName=$(./${helpersPath}/_getDistro.sh)
+helpersPath="../helpers"
+distroName=$(${helpersPath}/_getDistro.sh)
 
 echo "Installing dependencies"
-./helpers/_installIfExists.sh nodejs
+${helpersPath}/_installIfExists.sh nodejs build-essential
 
 echo "Installing neovim"
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   brew install nvim
 elif [[ "$distroName" == "arch" ]]; then
-  ./helpers/_installIfExists.sh neovim
+  ${helpersPath}/_installIfExists.sh base-devel neovim
 fi
 
 echo "Backing up old nvim setup"
