@@ -1,14 +1,8 @@
 #!/bin/bash
 
-echo "Ensuring dependencies are available for stows..."
-if [ ! -f /usr/bin/nala ]; then
-  echo "Installing nala. It's superior to apt in every way. Use it instead! :)"
-  sudo apt update && sudo apt install -y nala
-fi
-
-if [ ! -f /usr/bin/stow ]; then
+if [ ! -f $(which stow) ]; then
   echo "Installing stow, this will be used to manage the symlinks to the dotfiles dir..."
-  sudo nala update && sudo nala install -y --no-install-recommends stow
+  ./helpers/_installIfExists.sh stow
 fi
 
 # Make subfolders so we can ensure we don't stow the parent folders we don't want.
