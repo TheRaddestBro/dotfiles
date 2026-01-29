@@ -1,18 +1,18 @@
 #!/bin/bash
 echo "Installing NVChad"
 
-echo "Installing necessary environment packages..."
-if [ ! -f /usr/bin/nala ]; then
-  echo "Installing nala. It's better than apt... Use it instead :)"
-  sudo apt update && sudo apt install -y nala
-fi
+helpersPath=$(dirname "$0")
+distroName=$(./${helpersPath}/_getDistro.sh)
 
 echo "Installing dependencies"
-sudo nala install -y build-essential nodejs
-sudo snap install lazygit
+./helpers/_installIfExists.sh nodejs
 
 echo "Installing neovim"
-brew install nvim
+if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
+  brew install lazygit nvim
+elif [[ "$distroName" == "arch" ]]; then
+  ./helpers/_installIfExists.sh lazygit neovim
+fi
 
 echo "Backing up old nvim setup"
 mv ~/.config/nvim{,.bak}
