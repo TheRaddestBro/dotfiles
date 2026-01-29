@@ -8,12 +8,16 @@
 #   bash -c "$(fetch -o - https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"
 #
 
-if [ ! -f /usr/bin/git ]; then
-	sudo apt update && sudo apt install -y git
-fi
+./helpers/_installIfExists.sh git
 
 echo "Cloning dotfiles into $HOME/.dotfiles"
 git clone https://github.com/TheRaddestBro/dotfiles.git $HOME/.dotfiles
 pushd $HOME/.dotfiles
-./go.sh
+
+if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
+  ./go.sh
+elif [[ "$distroName" == "arch" ]]; then
+  ./goArch.sh
+fi
+
 popd

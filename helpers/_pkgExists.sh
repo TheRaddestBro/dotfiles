@@ -2,8 +2,16 @@
 
 PACKAGE=$1
 
+helpersPath=$(dirname "$0")
+distroName=$(./${helpersPath}/_getDistro.sh)
+
 # Execute apt-cache command and capture output
-output=$(apt-cache search --names-only "^${PACKAGE}$")
+
+if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
+  output=$(apt-cache search --names-only "^${PACKAGE}$")
+elif [[ "$distroName" == "arch" ]]; then
+  output=$(pacman -Ssq "^${PACKAGE}$" | grep "${PACKAGE}")
+fi
 
 # Check the exit status of the previous command ($?)
 if [ $? -eq 0 ]; then
