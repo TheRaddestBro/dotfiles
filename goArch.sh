@@ -17,11 +17,10 @@ echo "Installing fun packages..."
 #./_installIfExists.sh aptitude neofetch tmuxinator
 ./helpers/_installIfExists.sh wget git cmake stow tmux zsh tree zip unzip powerline sysstat entr powertop
 mkdir -p $HOME/.local/share
-exit 0
 
 echo "Upgrading all other packages..."
-sudo nala upgrade -y
-
+pacman -Syu --noconfirm
+exit 0
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
