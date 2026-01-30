@@ -17,7 +17,7 @@ elif [[ "$distroName" == "arch" ]]; then
 fi
 
 if [[ "$(whoami)" == "root" ]]; then
-  echo "It's not a good idea to install everything as root. Go make a sudo user!"
+  echo "It's not a good idea to install everything as root. Go make a sudo user, and try again! (Check the readme at https://github.com/TheRaddestBro/dotfiles for details)"
   exit 1
 fi
 
