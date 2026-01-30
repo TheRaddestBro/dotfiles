@@ -16,14 +16,17 @@ elif [[ "$distroName" == "arch" ]]; then
   pacman -Syu --noconfirm && pacman -S --noconfirm git
 fi
 
+if [[ "$(whoami)" == "root" ]]; then
+  echo "It's not a good idea to install everything as root. Go make a sudo user!"
+  exit 1
+fi
+
 echo "Cloning dotfiles into $HOME/.dotfiles"
 git clone https://github.com/TheRaddestBro/dotfiles.git $HOME/.dotfiles
 pushd $HOME/.dotfiles
-
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   ./go.sh
 elif [[ "$distroName" == "arch" ]]; then
   ./goArch.sh
 fi
-
 popd

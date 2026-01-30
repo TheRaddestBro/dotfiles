@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ "$(whoami)" == "root" ]]; then
+  echo "It's not a good idea to install everything as root. Go make a sudo user!"
+  exit 1
+fi
+
 echo "Installing critical packages"
 ./helpers/_installIfExists.sh eza tldr which
 
@@ -23,7 +28,7 @@ sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"powerlevel10k\/powerlevel10k\"/
 sed -i 's/plugins=\(.*\)/plugins=(battery git tmux tmuxinator)/g' $HOME/.zshrc
 
 echo "Making zsh the default shell (You might need to provide credentials for this)..."
-# TODO: Arch starts everything as root, so this needs to handle if we are root instead of a normal user. 
+# TODO: Arch starts everything as root, so this needs to handle if we are root instead of a normal user.
 chsh -s $(which zsh) $(whoami)
 
 echo "Setting up the rest of the dotfiles..."

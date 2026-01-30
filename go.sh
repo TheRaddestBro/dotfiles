@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ "$(whoami)" == "root" ]]; then
+  echo "It's not a good idea to install everything as root. Go make a sudo user!"
+  exit 1
+fi
+
 echo "Ensuring dependencies are available..."
 if [ ! -f /usr/bin/nala ]; then
   echo "Installing nala. It's superior to apt in every way. Use it instead! :)"
