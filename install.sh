@@ -13,7 +13,7 @@ distroName=$(curl -sS https://raw.githubusercontent.com/TheRaddestBro/dotfiles/m
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   sudo apt update && sudo apt install -y git
 elif [[ "$distroName" == "arch" ]]; then
-  pacman -Syu --noconfirm && pacman -S --noconfirm git
+  sudo pacman -Syu --noconfirm && sudo pacman -S --noconfirm git
 fi
 
 if [[ "$(whoami)" == "root" ]]; then
