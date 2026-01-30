@@ -42,6 +42,12 @@ else
 fi
 
 
+helpersPath="$HOME/.dotfiles/helpers"
+distroName=$(${helpersPath}/_getDistro.sh)
+if [[ "$distroName" == "arch" ]]; then
+  alias vi="nvim"
+fi
+
 # Jumps
 # -------------------------------------------------------------
 alias R4="cd ~/repos/R4"
