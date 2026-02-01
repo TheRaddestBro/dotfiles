@@ -26,7 +26,7 @@ if [[ "$distroName" == "arch" ]]; then
   # Install AUR wrapper
   git clone https://aur.archlinux.org/yay.git
   pushd yay
-  makepkg -si
+  makepkg -si --noconfirm
   popd
   sudo rm -r yay
 fi
