@@ -13,12 +13,22 @@ distroName=$(curl -sS https://raw.githubusercontent.com/TheRaddestBro/dotfiles/m
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   sudo apt update && sudo apt install -y git
 elif [[ "$distroName" == "arch" ]]; then
-  sudo pacman -Syu --noconfirm && sudo pacman -S --noconfirm git
+  sudo pacman -Syu --noconfirm && sudo pacman -S --needed --noconfirm base-devel git
+
 fi
 
 if [[ "$(whoami)" == "root" ]]; then
   echo "It's not a good idea to install everything as root. Go make a sudo user, and try again! (Check the readme at https://github.com/TheRaddestBro/dotfiles for details)"
   exit 1
+fi
+
+if [[ "$distroName" == "arch" ]]; then
+  # Install AUR wrapper
+  git clone https://aur.archlinux.org/yay.git
+  pushd yay
+  makepkg -si
+  popd
+  sudo rm -r yay
 fi
 
 echo "Cloning dotfiles into $HOME/.dotfiles"

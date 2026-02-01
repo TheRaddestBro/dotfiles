@@ -10,7 +10,7 @@ distroName=$(./${helpersPath}/_getDistro.sh)
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   output=$(apt-cache search --names-only "^${PACKAGE}$")
 elif [[ "$distroName" == "arch" ]]; then
-  output=$(pacman -Ssq "^${PACKAGE}$" | grep "${PACKAGE}")
+  output=$(yay -Ssq "^${PACKAGE}$" | grep "${PACKAGE}")
 fi
 
 # Check the exit status of the previous command ($?)

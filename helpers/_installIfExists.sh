@@ -32,5 +32,5 @@ if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
     sudo apt install -y $final_string
   fi
 elif [[ "$distroName" == "arch" ]]; then
-  sudo pacman -S --needed --noconfirm $final_string
+  sudo yay -S --needed --noconfirm $final_string
 fi

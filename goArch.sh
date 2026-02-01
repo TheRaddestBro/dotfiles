@@ -18,7 +18,7 @@ echo "Installing fun packages..."
 mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."
-sudo pacman -Syu --noconfirm
+sudo yay -Syu --noconfirm
 
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
