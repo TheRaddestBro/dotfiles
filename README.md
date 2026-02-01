@@ -26,10 +26,13 @@ Currently, this is tuned for a WSL Ubuntu setup.
 - Arch
   * ``useradd -m user_name && passwd user_name``
   * ``pacman -S --noconfirm sudo vi && usermod -aG wheel user_name``
-  * uncomment the %wheel ALL=(ALL) ALL line in /etc/sudoers using visudo
-  * For WSL, exit the window, then in PowerShell enter: ``sudo vi /etc/wsl.conf`` append: 
-    + ``[user]`` 
-    + ``default=user_name`` 
+  * Uncomment the %wheel ALL=(ALL) ALL line in /etc/sudoers using visudo
+  * For WSL, do one of the following
+    + Change WSL default user
+      * Exit the window, then in PowerShell enter: ``wsl --manage distro_name --set-default-user user_name``
+    + Change the default login user in ``/etc/wsl.conf`` by appending:
+      * ``[user]`` 
+      * ``default=user_name`` 
   * Login as user_name
   * now run the ``install.sh`` script.
 
