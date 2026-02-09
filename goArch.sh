@@ -14,7 +14,7 @@ echo "Installing base packages..."
 echo "Installing fun packages..."
 # Pacman does hot have these. AUR Maybe?
 #./_installIfExists.sh aptitude neofetch tmuxinator
-./helpers/_installIfExists.sh wget git cmake stow tmux zsh tree zip unzip powerline sysstat entr powertop
+./helpers/_installIfExists.sh wget git cmake fastfetch stow tmux zsh tree zip unzip powerline sysstat entr powertop
 mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."

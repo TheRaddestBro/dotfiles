@@ -18,7 +18,7 @@ popd
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo "Installing Homebrew packages..."
-brew install btop dust fd fzf lazygit ripgrep stress tldr eza
+brew install btop dust fastfetch fd fzf lazygit ripgrep stress tldr eza
 
 if [ -f /usr/bin/snap ]; then
   echo "Refreshing snaps..."
@@ -27,7 +27,7 @@ fi
 
 echo "Installing APT packages..."
 pushd helpers
-./_installIfExists.sh wget aptitude neofetch git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat entr powertop
+./_installIfExists.sh wget aptitude git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat entr powertop
 popd
 mkdir -p $HOME/.local/share
 
