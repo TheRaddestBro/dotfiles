@@ -25,7 +25,7 @@ Currently, this is tuned for a WSL Ubuntu setup.
 # Setup Sudo user
 - Arch
   * ``useradd -m user_name && passwd user_name``
-  * ``pacman -S --noconfirm sudo vi && usermod -aG wheel user_name``
+  * ``pacman -Sy --noconfirm sudo vi && usermod -aG wheel user_name``
   * Uncomment the %wheel ALL=(ALL) ALL line in /etc/sudoers using visudo
   * For WSL, do one of the following
     + Change WSL default user

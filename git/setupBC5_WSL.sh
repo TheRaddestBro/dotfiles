@@ -1,11 +1,5 @@
 #!/bin/bash
 
-echo "Ensuring dependencies are available..."
-if [ ! -f /usr/bin/nala ]; then
-  echo "Installing nala. It's superior to apt in every way. Use it instead! :)"
-  sudo apt update && sudo apt install -y nala
-fi
-
 echo "Adding Beyond Compare as the git difftool..."
 
 # So I don't have to keep typing it...
