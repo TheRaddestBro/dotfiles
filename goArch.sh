@@ -20,6 +20,11 @@ mkdir -p $HOME/.local/share
 echo "Upgrading all other packages..."
 yay -Syu --noconfirm
 
+if [ -f $HOME/.bash_profile ]; then
+  echo replacing existing .bash_profile.
+  mv $HOME/.bash_profile $HOME/.bash_profile_orig
+fi
+
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
