@@ -167,8 +167,15 @@ if [[ "$distroName" == "arch" ]]; then
   alias nlu="yay"
   alias nup="yay"
 else
-  alias nlu="sudo nala update && sudo nala list --upgradable"
-  alias nup="sudo nala upgrade -y"
+  if [ -f $(which nala) ]; then
+    alias nlu="sudo nala update && sudo nala list --upgradable"
+    alias nup="sudo nala upgrade -y"
+  elif [ -f $(which apt) ]; then
+    alias nlu="sudo apt update && sudo apt list --upgradable"
+    alias nup="sudo apt upgrade -y"
+  else
+    echo "Error: [Packaging system could not be found]"
+  fi
 fi
 
 
