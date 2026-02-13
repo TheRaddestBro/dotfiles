@@ -161,10 +161,15 @@ ctests() {
 alias ct=ctests
 alias doit="crb && ct"
 
-# Nala
+# Package management 
 # -------------------------------------------------------------
-alias nlu="sudo nala update && sudo nala list --upgradable"
-alias nup="sudo nala upgrade -y"
+if [[ "$distroName" == "arch" ]]; then
+  alias nlu="yay"
+  alias nup="yay"
+else
+  alias nlu="sudo nala update && sudo nala list --upgradable"
+  alias nup="sudo nala upgrade -y"
+fi
 
 
 # Tmux
