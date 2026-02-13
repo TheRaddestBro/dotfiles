@@ -164,7 +164,7 @@ alias doit="crb && ct"
 # Package management 
 # -------------------------------------------------------------
 if [[ "$distroName" == "arch" ]]; then
-  alias nlu="yay"
+  alias nlu="yay -Sy"
   alias nup="yay"
 else
   if [ -f $(which nala) ]; then
