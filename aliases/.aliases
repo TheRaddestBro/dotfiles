@@ -164,8 +164,8 @@ alias doit="crb && ct"
 # Package management 
 # -------------------------------------------------------------
 if [[ "$distroName" == "arch" ]]; then
-  alias nlu="yay -Sy"
-  alias nup="yay"
+  alias nlu="yay -Sy && yay -Qu"
+  alias nup="yay --noconfirm"
 else
   if [ -f $(which nala) ]; then
     alias nlu="sudo nala update && sudo nala list --upgradable"
