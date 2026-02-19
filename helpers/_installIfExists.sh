@@ -13,7 +13,7 @@ for arg in "$@"; do
   if [ $? -eq 0 ]; then
     pkg_list+=("$PACKAGE_NAME")
   else
-    echo "$arg is not a valid apt package. Skipping."
+    echo "$arg is not a valid package. Skipping."
   fi
 done
 

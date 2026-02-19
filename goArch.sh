@@ -12,8 +12,8 @@ echo "Installing base packages..."
 ./helpers/_installIfExists.sh btop dust fd fzf lazygit ripgrep stress vim
 
 echo "Installing fun packages..."
-# Pacman does hot have these. AUR Maybe?
-#./_installIfExists.sh aptitude neofetch tmuxinator
+# Pacman does hot have these. AUR does, but _pkgExists.sh is not finding it properly.
+#./_installIfExists.sh tmuxinator
 ./helpers/_installIfExists.sh wget git cmake fastfetch stow tmux zsh tree zip unzip powerline sysstat entr powertop
 mkdir -p $HOME/.local/share
 
