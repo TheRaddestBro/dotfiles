@@ -5,10 +5,11 @@ helpersPath="../helpers"
 distroName=$(${helpersPath}/_getDistro.sh)
 
 echo "Installing dependencies"
-${helpersPath}/_installIfExists.sh nodejs build-essential
+${helpersPath}/_installIfExists.sh nodejs
 
 echo "Installing neovim"
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
+  ${helpersPath}/_installIfExists.sh build-essential
   brew install nvim
 elif [[ "$distroName" == "arch" ]]; then
   ${helpersPath}/_installIfExists.sh base-devel neovim
