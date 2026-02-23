@@ -6,16 +6,14 @@ if [[ -f "/etc/os-release" ]]; then
   . /etc/os-release
   if [[ "$ID" == "fedora" ]]; then
     output="fedora"
-  elif [[ "$ID" == "ubuntu" ]]; then
-    output="ubuntu"
-  elif [[ "$ID" == "debian" ]]; then
+  elif [[ "$ID" == "debian" || "$ID_LIKE" == "debian" ]]; then
     output="debian"
-  elif [[ "$ID" == "arch" ]]; then
+  elif [[ "$ID" == "arch" || "$ID_LIKE" == "arch" ]]; then
     output="arch"
   fi
 elif [[ -f "/etc/debian_version" ]]; then
   output="debian"
-elif [ -f "/etc/arch-release" ]; then
+elif [[ -f "/etc/arch-release" ]]; then
   output="arch"
 fi
 
