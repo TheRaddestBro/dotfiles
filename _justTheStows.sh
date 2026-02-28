@@ -11,6 +11,6 @@ mkdir -p $HOME/.config/tmuxinator
 # Ignore anything that starts with setup, or ends with _OLD, _NEW, etc.
 ignorePattern="^setup.*\.sh|.*_OLD$|.*_NEW$|.*_BASE$"
 echo "Installing symlinks for .dotfiles into the $HOME folder..."
-stow --verbose=1 --ignore=$ignorePattern --target=$HOME aliases bash git omz tmux tmuxinator vim
+stow --verbose=1 --ignore=$ignorePattern --target=$HOME alacritty aliases bash git omz tmux tmuxinator vim
 
 echo "Done!"
