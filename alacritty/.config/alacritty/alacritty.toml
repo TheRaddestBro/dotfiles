@@ -11,9 +11,9 @@ x = 0
 y = 0
 
 [window]
-dimensions = { columns = 200, lines = 56 }
+dimensions = { columns = 150, lines = 40 }
 decorations = "Full"
-opacity = 0.8
+opacity = 0.9
 blur = true
 option_as_alt = "OnlyLeft"
 
