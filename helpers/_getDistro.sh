@@ -4,11 +4,11 @@ output="unknown"
 if [[ -f "/etc/os-release" ]]; then
   # Source the file to load the variables
   . /etc/os-release
-  if [[ "$ID" == "fedora" ]]; then
+  if [[ "$ID" == "fedora" || "$ID_LIKE" == *"fedora"* ]]; then
     output="fedora"
-  elif [[ "$ID" == "debian" || "$ID_LIKE" == "debian" ]]; then
+  elif [[ "$ID" == "debian" || "$ID_LIKE" == *"debian"* ]]; then
     output="debian"
-  elif [[ "$ID" == "arch" || "$ID_LIKE" == "arch" ]]; then
+  elif [[ "$ID" == "arch" || "$ID_LIKE" == *"arch"* ]]; then
     output="arch"
   fi
 elif [[ -f "/etc/debian_version" ]]; then
