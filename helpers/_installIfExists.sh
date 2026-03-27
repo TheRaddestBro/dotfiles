@@ -25,6 +25,11 @@ if [[ $? -eq 1 ]]; then
   exit 1
 fi
 
+if [[ -z "$final_string" ]]; then
+  echo "No valid packages to install"
+  exit 1
+fi
+
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   if [ -f /usr/bin/nala ]; then
     sudo nala install -y --no-install-recommends $final_string
