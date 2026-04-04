@@ -12,10 +12,7 @@ if [ ! -f /usr/bin/nala ]; then
 fi
 
 echo "Setting up Homebrew..."
-pushd brew
-./setupBrew.sh
-popd
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+./brew/setupBrew.sh
 
 echo "Installing Homebrew packages..."
 brew install btop dust fastfetch fd fzf lazygit ripgrep stress tldr eza

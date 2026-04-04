@@ -19,10 +19,6 @@ ${helpersPath}/_installIfExists.sh curl
 
 echo "Setting up Homebrew..."
 ./brew/setupBrew.sh
-#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
-
-#echo >> /home/rohun/.bashrc
-#echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"' >> /home/rohun/.bashrc
 
 echo "Installing Homebrew packages..."
 brew install btop dust eza fastfetch fd fzf lazygit ripgrep stress tldr tmuxinator 
