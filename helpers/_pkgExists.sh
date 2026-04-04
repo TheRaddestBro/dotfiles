@@ -11,6 +11,10 @@ if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   output=$(apt-cache search --names-only "^${PACKAGE}$")
 elif [[ "$distroName" == "arch" ]]; then
   output=$(yay -Ssq "${PACKAGE}" --searchby name | grep "^${PACKAGE}$")
+elif [[ "$distroName" == "fedora" ]]; then
+  output=$(dnf list "${PACKAGE}.*" 2>/dev/null)
+else
+  echo "$distroName-based distros are not yet supported!"
 fi
 
 # Check the exit status of the previous command ($?)

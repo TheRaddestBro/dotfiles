@@ -19,7 +19,6 @@ done
 
 # Build a space-separated string from the string array
 final_string="${pkg_list[*]}"
-echo $final_string
 
 if [[ $? -eq 1 ]]; then
   exit 1
@@ -38,4 +37,9 @@ if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   fi
 elif [[ "$distroName" == "arch" ]]; then
   yay -S --needed --noconfirm $final_string
+elif [[ "$distroName" == "fedora" ]]; then
+  sudo dnf install -y $final_string
+else
+  echo "$distroName-based distros are not yet supported"
+  exit 1
 fi

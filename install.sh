@@ -38,5 +38,7 @@ if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   ./go.sh
 elif [[ "$distroName" == "arch" ]]; then
   ./goArch.sh
+elif [[ "$distroName" == "fedora" ]]; then
+  ./goFedora.sh
 fi
 popd
