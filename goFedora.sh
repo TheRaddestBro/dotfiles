@@ -19,13 +19,13 @@ ${helpersPath}/_installIfExists.sh curl
 
 echo "Setting up Homebrew..."
 ./brew/setupBrew.sh
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 
 #echo >> /home/rohun/.bashrc
 #echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"' >> /home/rohun/.bashrc
 
 echo "Installing Homebrew packages..."
-brew install btop dust eza fastfetch fd fzf lazygit ripgrep stress tldr 
+brew install btop dust eza fastfetch fd fzf lazygit ripgrep stress tldr tmuxinator 
 
 # Install COPR repos
 echo "Setting up COPR repos" 
@@ -33,10 +33,10 @@ sudo dnf install -y dnf-plugins-core
 #sudo dnf copr enable atim/lazygit
 
 echo "Installing RPM packages..."
-./${helpersPath}/_installIfExists.sh cmake entr powerline powertop stow sysstat tmuxinator tree unzip zsh zip
+./${helpersPath}/_installIfExists.sh cmake entr powerline powertop stow sysstat tree unzip zsh zip
 
-mkdir -p $HOME/.local/share
 exit 1
+mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."
 sudo dnf upgrade --assumeyes 
@@ -53,6 +53,9 @@ sudo chsh -s $(which zsh) $(whoami)
 
 echo "Setting up the rest of the dotfiles..."
 ./setupStows.sh
+
+echo "Cleaning up after all of these dnf operations..."
+sudo dnf clean all
 
 echo "Updating tldr results..."
 tldr -u

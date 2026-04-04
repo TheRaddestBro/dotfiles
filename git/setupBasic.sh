@@ -18,4 +18,7 @@ else
   fi
 fi
 
+echo "...Done!"
+
+echo "Want Git Credential Manager integration? Run git/setupGCM*.sh"
 echo "Want Beyond Compare integration? Run git/setupBC*.sh"

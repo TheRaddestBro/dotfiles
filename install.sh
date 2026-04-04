@@ -14,7 +14,8 @@ if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
   sudo apt update && sudo apt install -y git
 elif [[ "$distroName" == "arch" ]]; then
   sudo pacman -Sy --noconfirm && sudo pacman -S --needed --noconfirm base-devel git
-
+elif [[ "$distroName" == "fedora" ]]; then
+  sudo dnf upgrade --assumeyes && sudo dnf group install --assumeyes development-tools
 fi
 
 if [[ "$(whoami)" == "root" ]]; then
