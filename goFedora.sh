@@ -25,8 +25,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 #echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"' >> /home/rohun/.bashrc
 
 echo "Installing Homebrew packages..."
-brew install btop dust fastfetch fd fzf lazygit ripgrep stress tldr eza
-exit 1
+brew install btop dust eza fastfetch fd fzf lazygit ripgrep stress tldr 
 
 # Install COPR repos
 echo "Setting up COPR repos" 
@@ -34,13 +33,13 @@ sudo dnf install -y dnf-plugins-core
 #sudo dnf copr enable atim/lazygit
 
 echo "Installing RPM packages..."
-pushd helpers
-./_installIfExists.sh wget aptitude git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat entr powertop
-popd
+./${helpersPath}/_installIfExists.sh cmake entr powerline powertop stow sysstat tmuxinator tree unzip zsh zip
+
 mkdir -p $HOME/.local/share
+exit 1
 
 echo "Upgrading all other packages..."
-sudo nala upgrade -y
+sudo dnf upgrade --assumeyes 
 
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended

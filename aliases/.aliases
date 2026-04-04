@@ -166,7 +166,10 @@ alias doit="crb && ct"
 if [[ "$distroName" == "arch" ]]; then
   alias nlu="yay -Sy && yay -Qu"
   alias nup="yay --noconfirm"
-else
+elif [[ "$distroName" == "fedora" ]]; then
+  alias nlu="sudo dnf update"
+  alias nup="sudo dnf upgrade --assumeyes"
+elif [[ "$distroName" == "debian" ]]; then
   if [ -f $(which nala) ]; then
     alias nlu="sudo nala update && sudo nala list --upgradable"
     alias nup="sudo nala upgrade -y"
@@ -176,6 +179,9 @@ else
   else
     echo "Error: [Packaging system could not be found]"
   fi
+else
+  echo "$distroName-based distros are not yet supported!"
+  exit 1
 fi
 
 
