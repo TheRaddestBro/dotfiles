@@ -14,7 +14,7 @@ fi
 
 echo "Ensuring dependencies are available..."
 echo "Installing dependencies"
-${helpersPath}/_installIfExists.sh curl
+${helpersPath}/_installIfExists.sh curl tmux
 
 echo "Setting up Homebrew..."
 ./brew/setupBrew.sh
