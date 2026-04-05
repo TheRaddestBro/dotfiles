@@ -12,7 +12,7 @@ if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
 elif [[ "$distroName" == "arch" ]]; then
   output=$(yay -Ssq "${PACKAGE}" --searchby name | grep "^${PACKAGE}$")
 elif [[ "$distroName" == "fedora" ]]; then
-  $ dnf info might work better?
+  # dnf info might work better?
   output=$(dnf list "${PACKAGE}.*" 2>/dev/null)
 else
   echo "$distroName-based distros are not yet supported!"

@@ -12,7 +12,6 @@ if [[ "$distroName" != "fedora" ]]; then
   echo "You should only run this script from a fedora-based distro!"
 fi
 
-
 echo "Ensuring dependencies are available..."
 echo "Installing dependencies"
 ${helpersPath}/_installIfExists.sh curl
@@ -31,7 +30,6 @@ sudo dnf install -y dnf-plugins-core
 echo "Installing RPM packages..."
 ./${helpersPath}/_installIfExists.sh cmake entr powerline powertop stow sysstat tree unzip zsh zip
 
-exit 1
 mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."
