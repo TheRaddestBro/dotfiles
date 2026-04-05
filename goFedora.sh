@@ -30,7 +30,7 @@ sudo dnf install -y dnf-plugins-core
 #sudo dnf copr enable atim/lazygit
 
 echo "Installing RPM packages..."
-./${helpersPath}/_installIfExists.sh cmake entr powerline powertop stow sysstat tree unzip zsh zip
+./${helpersPath}/_installIfExists.sh cmake entr powerline powertop stow sysstat tree unzip vim zsh zip
 
 mkdir -p $HOME/.local/share
 
