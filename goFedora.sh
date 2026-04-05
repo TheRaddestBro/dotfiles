@@ -18,6 +18,8 @@ ${helpersPath}/_installIfExists.sh curl
 
 echo "Setting up Homebrew..."
 ./brew/setupBrew.sh
+# Brew refuses to work without doing this here. It will still be unavailable at the CLI until the next reboot as well
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo "Installing Homebrew packages..."
 brew install btop dust eza fastfetch fd fzf lazygit ripgrep stress tldr tmuxinator 
