@@ -28,6 +28,9 @@ renameOldFile "${HOME}/.gitconfig"
 
 ./_justTheStows.sh
 
+# use this to ignore changes to the .gitconfig file. Useful because there will always be different changes for this file based on the environment.
+#git update-index --assume-unchanged git/.gitconfig
+
 echo "Adding a line to ~/.bashrc to execute our extra stuff..."
 echo -e "if [ -f $HOME/.bashrc_plus ]; then\n\tsource $HOME/.bashrc_plus\nfi\n" >>$HOME/.bashrc
 
