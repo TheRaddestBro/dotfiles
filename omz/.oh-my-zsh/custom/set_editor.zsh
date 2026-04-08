@@ -14,4 +14,4 @@ function trySetEditor {
 }
 
 trySetEditor 'nvim' || trySetEditor 'vim' || trySetEditor 'vi' || trySetEditor 'nano'
-
+alias vi='$EDITOR'

@@ -44,11 +44,6 @@ fi
 
 helpersPath="$HOME/.dotfiles/helpers"
 distroName=$(${helpersPath}/_getDistro.sh)
-if [[ "$distroName" == "arch" ]]; then
-  if command -v nvim >/dev/null 2>&1; then
-    alias vi="nvim"
-  fi
-fi
 
 # Jumps
 # -------------------------------------------------------------
