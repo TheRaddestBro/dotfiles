@@ -142,11 +142,11 @@ crebuild() {
 
 # Shortcut. Feel free to change this per environment
 cb() {
-  cbuild linux-only-debug Debug
+  cbuild linux-sdl3-debug Debug
 }
 
 crb() {
-  crebuild linux-only-debug Debug
+  crebuild linux-sdl3-debug Debug
 }
 
 ctests() {
