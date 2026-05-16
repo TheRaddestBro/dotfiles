@@ -136,7 +136,7 @@ cbuildall() {
 }
 
 crebuild() {
-  cconf $1 && cclean && cbuild $2
+  cconf $1 --fresh && cclean && cbuild $2
 }
 
 
