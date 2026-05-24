@@ -5,7 +5,8 @@ helpersPath="../helpers"
 distroName=$(./${helpersPath}/_getDistro.sh)
 
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
-  versionString="2.7.3"
+
+  versionString="2.8.0"
   latestURL="https://github.com/git-ecosystem/git-credential-manager/releases/latest/download"
   fileName="gcm-linux-x64-${versionString}.deb"
   #fileName="gcm-linux-arm64-${versionString}.deb"
