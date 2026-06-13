@@ -4,9 +4,15 @@
 Currently, this is tuned for a WSL Ubuntu setup.
 
 * Install via one of these as non-root (Installing these dotfiles as a root user is unsupported. See below for the commands to setup a sudo user) 
-  + ``bash -c "$(curl -fsSL https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"``
-  + ``bash -c "$(wget -qO- https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"``
-  + ``bash -c "$(fetch -o - https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"``
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"
+```
+```
+bash -c "$(wget -qO- https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"
+```
+```
+bash -c "$(fetch -o - https://raw.githubusercontent.com/TheRaddestBro/dotfiles/main/install.sh)"
+```
 * Logout/Login. This will allow aliases to work, and let the powerlevel10k config script to run.
 * Once that is done, other scripts can be run to customize/setup other things
   + Git
