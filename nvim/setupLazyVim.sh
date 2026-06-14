@@ -16,6 +16,9 @@ elif [[ "$distroName" == "arch" ]]; then
 elif [[ "$distroName" == "fedora" ]]; then
   sudo dnf group install --assumeyes development-tools c-development
   brew install nvim
+elif [[ "$distroName" == "apple" ]]; then
+  xcode-select --install
+  ${helpersPath}/_installIfExists.sh nvim 
 fi
 
 echo "Backing up old nvim setup"

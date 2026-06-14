@@ -15,6 +15,8 @@ elif [[ -f "/etc/debian_version" ]]; then
   output="debian"
 elif [[ -f "/etc/arch-release" ]]; then
   output="arch"
+elif [[ -f "/usr/bin/sw_vers" ]]; then
+  output="apple"
 fi
 
 echo $output

@@ -174,6 +174,9 @@ elif [[ "$distroName" == "debian" ]]; then
   else
     echo "Error: [Packaging system could not be found]"
   fi
+elif [[ "$distroName" == "apple" ]]; then
+  alias nlu="brew update && brew upgrade"
+  alias nup="brew upgrade"
 else
   echo "$distroName-based distros are not yet supported!"
   exit 1

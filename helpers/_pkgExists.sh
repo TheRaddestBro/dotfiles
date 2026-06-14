@@ -14,6 +14,8 @@ elif [[ "$distroName" == "arch" ]]; then
 elif [[ "$distroName" == "fedora" ]]; then
   # dnf info might work better?
   output=$(dnf list "${PACKAGE}.*" 2>/dev/null)
+elif [[ "$distroName" == "apple" ]]; then
+  output=$(brew search "/^${PACKAGE}$/")
 else
   echo "$distroName-based distros are not yet supported!"
 fi

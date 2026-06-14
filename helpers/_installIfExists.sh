@@ -39,6 +39,8 @@ elif [[ "$distroName" == "arch" ]]; then
   yay -S --needed --noconfirm $final_string
 elif [[ "$distroName" == "fedora" ]]; then
   sudo dnf install -y $final_string
+elif [[ "$distroName" == "apple" ]]; then
+  yes | brew install $final_string
 else
   echo "$distroName-based distros are not yet supported"
   exit 1

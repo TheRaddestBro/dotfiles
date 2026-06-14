@@ -41,5 +41,7 @@ elif [[ "$distroName" == "arch" ]]; then
   ./goArch.sh
 elif [[ "$distroName" == "fedora" ]]; then
   ./goFedora.sh
+elif [[ "$distroName" == "apple" ]]; then
+  ./goApple.sh
 fi
 popd
