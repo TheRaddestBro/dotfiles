@@ -159,8 +159,13 @@ alias doit="crb && ct"
 # Package management 
 # -------------------------------------------------------------
 if [[ "$distroName" == "arch" ]]; then
-  alias nlu="yay -Sy && yay -Qu"
-  alias nup="yay --noconfirm"
+  if [ -f $(which cachy-update) ]; then
+    alias nlu="yay -Sy && yay -Qu"
+    alias nup="cachy-update"
+  else
+    alias nlu="yay -Sy && yay -Qu"
+    alias nup="yay --noconfirm"
+  fi
 elif [[ "$distroName" == "fedora" ]]; then
   alias nlu="sudo dnf update"
   alias nup="sudo dnf upgrade --assumeyes"
