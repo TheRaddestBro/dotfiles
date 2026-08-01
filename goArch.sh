@@ -14,7 +14,7 @@ echo "Installing base packages..."
 echo "Installing fun packages..."
 # Pacman does hot have these. AUR does, but _pkgExists.sh is not finding it properly.
 #./_installIfExists.sh tmuxinator
-./helpers/_installIfExists.sh wget git cmake fastfetch stow tmux zsh tree zip unzip powerline sysstat entr powertop
+./helpers/_installIfExists.sh wget git cmake fastfetch stow tmux zsh tree zip unzip powerline sysstat entr powertop balena-etcher
 mkdir -p $HOME/.local/share
 
 echo "Upgrading all other packages..."
