@@ -150,10 +150,17 @@ crb() {
 }
 
 ctests() {
-  ctest --preset=default-linux --progress -j5
+  ctest --preset=$1 --progress -j5
 }
 
-alias ct=ctests
+ctestr() {
+	ctest --preset=default-linux --output-on-failure -j5 --progress --tests-regex $1
+}
+
+ct() {
+	ctests default-linux
+}
+
 alias doit="crb && ct"
 
 # Package management 
