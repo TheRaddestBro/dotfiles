@@ -166,7 +166,7 @@ alias doit="crb && ct"
 # Package management 
 # -------------------------------------------------------------
 if [[ "$distroName" == "arch" ]]; then
-  if [ -f $(which cachy-update) ]; then
+  if [[ -f $(which cachy-update) ]]; then
     alias nlu="yay -Sy && yay -Qu"
     alias nup="cachy-update"
   else
@@ -177,11 +177,11 @@ elif [[ "$distroName" == "fedora" ]]; then
   alias nlu="sudo dnf update"
   alias nup="sudo dnf upgrade --assumeyes"
 elif [[ "$distroName" == "debian" ]]; then
-  if [ -f $(which nala) ]; then
+  if [[ -f $(which nala) ]]; then
     alias nlu="sudo nala update && sudo nala list --upgradable"
     alias nup="sudo nala upgrade -y"
     alias nar="sudo nala autoremove --purge"
-  elif [ -f $(which apt) ]; then
+  elif [[ -f $(which apt) ]]; then
     alias nlu="sudo apt update && sudo apt list --upgradable"
     alias nup="sudo apt upgrade -y"
     alias nar="sudo apt autoremove --purge"
@@ -210,6 +210,7 @@ alias lg=lazygit
 # -------------------------------------------------------------
 alias zipfolders='find . -maxdepth 1 -type d ! -name "*#*" ! -path . -exec zip -9 -r "{}.zip" "{}" \;'
 alias zipandremovefolders='find . -maxdepth 1 -type d ! -name "*#*" ! -path . -exec zip -9 -r "{}.zip" "{}" \; -and -exec rm -rf "{}" \;'
+#alias wipefreespace='echo "DO NOT RUN THIS AS ROOT" && read -p Continue? && dd if=/dev/zero of=zerosmallfile.txt status=progress bs=1024 count=102400 && dd if=/dev/zero of=zerofile.txt status=progress && echo "sleeping 60 seconds" && sync && sleep 60 && sync && rm zerosmallfile.txt && rm zerofile.txt'
 
 # Include work-specific aliases
 # -------------------------------------------------------------
