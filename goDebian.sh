@@ -24,7 +24,7 @@ fi
 
 echo "Installing APT packages..."
 pushd helpers
-./_installIfExists.sh wget aptitude git cmake stow tmux zsh tree zip unzip powerline tmuxinator sysstat entr powertop
+./_installIfExists.sh wget aptitude git cmake debian-goodies stow tmux zsh tree zip unzip powerline tmuxinator sysstat entr powertop
 popd
 mkdir -p $HOME/.local/share
 

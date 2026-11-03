@@ -36,7 +36,7 @@ echo "Cloning dotfiles into $HOME/.dotfiles"
 git clone https://github.com/TheRaddestBro/dotfiles.git $HOME/.dotfiles
 pushd $HOME/.dotfiles
 if [[ "$distroName" == "debian" || "$distroName" == "ubuntu" ]]; then
-  ./go.sh
+  ./goDebian.sh
 elif [[ "$distroName" == "arch" ]]; then
   ./goArch.sh
 elif [[ "$distroName" == "fedora" ]]; then
