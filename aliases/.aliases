@@ -180,9 +180,11 @@ elif [[ "$distroName" == "debian" ]]; then
   if [ -f $(which nala) ]; then
     alias nlu="sudo nala update && sudo nala list --upgradable"
     alias nup="sudo nala upgrade -y"
+    alias nar="sudo nala autoremove --purge"
   elif [ -f $(which apt) ]; then
     alias nlu="sudo apt update && sudo apt list --upgradable"
     alias nup="sudo apt upgrade -y"
+    alias nar="sudo apt autoremove --purge"
   else
     echo "Error: [Packaging system could not be found]"
   fi
